@@ -3,6 +3,7 @@ package glot
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"os/exec"
 )
@@ -88,7 +89,8 @@ func (plot *Plot) CheckedCmd(format string, a ...interface{}) {
 	err := plot.Cmd(format, a...)
 	if err != nil {
 		errString := fmt.Sprintf("** err: %v\n", err)
-		panic(errString)
+		//panic(errString)
+		log.Print(errString)
 	}
 }
 
